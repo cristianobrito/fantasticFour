@@ -19,3 +19,5 @@ fantasticFour/
     ├── api-php/     # Projeto Laravel/CodeIgniter ou PHP puro
     └── bot-python/  # Seus scripts de IA ou Automação
 ```
+
+![alt text](dash.jpg)
