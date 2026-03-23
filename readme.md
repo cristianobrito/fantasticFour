@@ -1,5 +1,9 @@
 # readme fantasticFour
-#### estrutura
+
+- este projeto é a estrutura basica de 4 services nodejs python php e bash
+- para estudar como essas linguagens agem juntamente e fazer a segurança 
+
+#### estrutura inicial
 ```bash
 fantasticFour/
 ├── docker-compose.yml
