@@ -1,0 +1,28 @@
+### --- DOCKER & SISTEMA --- ###
+.docker/
+db_data/             # IMPORTANTE: Não suba os dados do seu banco MySQL!
+*.log                # Arquivos de log gerados pelos containers
+.DS_Store            # Lixo do Mac (se usar)
+Thumbs.db            # Lixo do Windows
+
+### --- NODE.JS (webNode) --- ###
+apps/webNode/node_modules/    # Nunca suba essa pasta, ela é pesada e o npm recria
+apps/webNode/.env             # Senhas e chaves do Front-End
+apps/webNode/dist/            # Pasta de build/produção
+apps/webNode/.next/           # Cache do Next.js
+
+### --- PHP (apiPhp & CodeIgniter) --- ###
+apps/apiPhp/vendor/           # Pasta do Composer (equivalente ao node_modules)
+apps/apiPhp/.env              # Configurações sensíveis do Banco de Dados
+apps/apiPhp/writable/         # Cache e logs do CodeIgniter 4
+apps/apiPhp/user_guide_src/   # Documentação interna (se baixar o CI completo)
+
+### --- PYTHON (botPython) --- ###
+apps/botPython/__pycache__/   # Arquivos compilados do Python
+apps/botPython/*.py[cod]      # Bytecodes
+apps/botPython/venv/          # Se você criar ambientes virtuais locais
+apps/botPython/.env           # Chaves de API do seu robô
+
+### --- SCRIPTS & SEGURANÇA --- ###
+scripts/temp/                 # Pastas temporárias de scripts bash
+*.pem                         # Chaves de segurança/certificados

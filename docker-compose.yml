@@ -1,0 +1,42 @@
+services:
+  php:
+    build: ./php82
+    container_name: php82
+    volumes:
+      - ./apps/apiPhp:/var/www/html
+    ports:
+      - "8080:80"
+
+  nodejs:
+    build: ./nodejs18
+    container_name: node18
+    volumes:
+      - ./apps/webNode:/app
+    working_dir: /app
+    tty: true
+    stdin_open: true
+    # command: npm start (comente até ter o package.json lá dentro)
+
+  python:
+    image: python:3.11-slim
+    container_name: py-script
+    volumes:
+      - ./apps/botPython:/app
+      - ./scripts:/scripts # Seus .sh ficam acessíveis aqui também
+    working_dir: /app
+    tty: true
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: meu_projeto
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
